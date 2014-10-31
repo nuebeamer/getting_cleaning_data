@@ -1,0 +1,6 @@
+setwd("D:\\Nanda\\R-programming\\Quiz1-Getting_CleaningData\\")
+require("XLConnect")
+getxlsd <- loadWorkbook("getdata_data_DATA.gov_NGAP.xlsx")
+summary(getxlsd)
+dat <- readWorksheet(getxlsd, sheet = "NGAP Sample Data", startRow=18, endRow=23, startCol=7, endCol=15)
+sum(dat$Zip*dat$Ext,na.rm=T) 
